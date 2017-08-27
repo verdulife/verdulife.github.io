@@ -1,0 +1,36 @@
+.numpad-box {
+  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  div {
+    width: 25%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    font-size: 7vw;
+    opacity: .1;
+    user-select: none;
+    border: none;
+    outline:none;
+    background: transparent;
+    transition: .1s;
+    border-radius: 10%;
+  }
+}
+
+#reset, #divisor {
+  font-size: 5vw;
+}
+
+#equal {
+  width: 15vw;
+  height: 15vw;
+  margin-left: 4vw;
+  background: $green;
+  border-radius: 50%;
+  opacity: 1;
+  box-shadow: 0 0 3vw 0 #000;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" type="image/png" href="assets/apple.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#2B2B2B">
+  <link rel="icon" type="image/png" href="assets/android.png">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <!-- Posicionamiento -->
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="KACTUS studio 2017©">
+  <title>C4LCUL4NC3</title>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/estilos.css">
+  <link rel="stylesheet" type="text/css" media="only screen and (min-width: 700px)" href="css/l-estilos.css">
+  <!-- Fonts/Icons -->
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,600" rel="stylesheet">
+</head>
+
+<body ng-app="calcApp">
+
+  <main id="calculanceView" ng-controller="calcCon">
+
+    <nav id="logo">
+      <img src="assets/calculance-logo.svg" alt="calculance | KACTUS">
+    </nav>
+
+    <div class="autocalc-box">
+      <div class="retencion-box">
+        <p class="retencion-title">irpf = {{retLow}}%</p>
+        <h1 id="retencionDisplay">40,00€</h1>
+      </div>
+
+      <div class="iva-box">
+        <p class="iva-title">iva = 21%</p>
+        <h1 id="ivaDisplay">120,00€</h1>
+      </div>
+
+      <div class="total-box">
+        <p class="total-title">TOTAL</p>
+        <h1 id="totalDisplay">600,00€</h1>
+      </div>
+    </div>
+
+    <div class="display-box">
+
+      <div class="old-box">
+        <p class="old-three">2*5</p>
+        <p class="old-two">10+50,50</p>
+        <p class="old-one">60,50+100</p>
+      </div>
+
+      <div class="actual-box">
+        <p class="actual-display">160,50</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="numpad-box">
+      <div class="num-btn" id="reset">AC</div>
+      <div class="empty-btn" id="empty"></div>
+      <div class="empty-btn" id="empty"></div>
+      <div class="num-btn" id="divisor">/</div>
+      <div class="num-btn" id="numOne">1</div>
+      <div class="num-btn" id="numTwo">2</div>
+      <div class="num-btn" id="numthree">3</div>
+      <div class="num-btn" id="multiplier">*</div>
+      <div class="num-btn" id="numFour">4</div>
+      <div class="num-btn" id="numFive">5</div>
+      <div class="num-btn" id="numSix">6</div>
+      <div class="num-btn" id="minus">-</div>
+      <div class="num-btn" id="numSeven">7</div>
+      <div class="num-btn" id="numEight">8</div>
+      <div class="num-btn" id="numNine">9</div>
+      <div class="num-btn" id="plus">+</div>
+      <div class="empty-btn" id="empty"></div>
+      <div class="num-btn" id="numZero">0</div>
+      <div class="num-btn" id="coma">,</div>
+      <div class="equal-btn" id="equal">=</div>
+    </div>
+
+  </main>
+
+  <div class="no-landscape"></div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
