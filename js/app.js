@@ -23,5 +23,24 @@ var calcApp = angular.module('calcApp', []);
 calcApp.controller('calcCon', function($scope){
 
   $scope.retLow = '7';
+  $scope.retLow = '7';
+  $scope.ivaLow = '4';
+  $scope.ivaMid = '16';
+  $scope.ivaHigh = '21';
+
+  $scope.val = '0';
+
+  $scope.addNum = function(num){
+    if($scope.val == '0'){
+      $scope.val = '';
+    }
+
+    $scope.val += num;
+
+  };
+
+  $scope.resetCalc = function(num){
+    $scope.val = '0';
+  };
 
 });
