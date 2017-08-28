@@ -21,6 +21,7 @@
   <link rel="stylesheet" type="text/css" media="only screen and (min-width: 700px)" href="css/l-estilos.css">
   <!-- Fonts/Icons -->
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,600" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body ng-app="calcApp">
@@ -32,31 +33,33 @@
       <p>C4LCUL4NC3</p>
     </nav>
 
-    <div class="autocalc-box">
-      <div class="retencion-box" ng-click="changeRet()">
-        <p class="retencion-title">IRPF {{ret}}%</p>
-        <h1 id="retencionDisplay">{{-output * ret / 100 | number: '2'}}€</h1>
+    <div class="top-box">
+      <div class="autocalc-box">
+        <div class="retencion-box" ng-click="changeRet()">
+          <p class="retencion-title">IRPF {{ret}}%</p>
+          <h1 id="retencionDisplay">{{-output * ret / 100 | number: '2'}}€</h1>
+        </div>
+
+        <div class="iva-box" ng-click="changeIva()">
+          <p class="iva-title">IVA {{ivas[iva]}}%</p>
+          <h1 id="ivaDisplay">{{output * ivas[iva] / 100 | number: '2'}}€</h1>
+        </div>
+
+        <div class="total-box">
+          <p class="total-title">TOTAL</p>
+          <h1 id="totalDisplay">{{output - (output * ret / 100) + (output * ivas[iva] / 100) | number: '2'}}€</h1>
+        </div>
       </div>
 
-      <div class="iva-box" ng-click="changeIva()">
-        <p class="iva-title">IVA = {{ivas[iva]}}%</p>
-        <h1 id="ivaDisplay">{{output * ivas[iva] / 100 | number: '2'}}€</h1>
-      </div>
+      <div class="display-box">
 
-      <div class="total-box">
-        <p class="total-title">TOTAL</p>
-        <h1 id="totalDisplay">{{output - (output * ret / 100) + (output * ivas[iva] / 100) | number: '2'}}€</h1>
-      </div>
-    </div>
+        <div class="old-box">
+          <p class="old">BASE IMPONIBLE</p>
+        </div>
 
-    <div class="display-box">
-
-      <div class="old-box">
-        <p class="old">{{output}}</p>
-      </div>
-
-      <div class="actual-box">
-        <p class="actual-display">{{output}}</p>
+        <div class="actual-box">
+          <p class="actual-display">{{output}}</p>
+        </div>
       </div>
     </div>
 
@@ -86,8 +89,6 @@
     </div>
 
   </main>
-
-  <div class="no-landscape"></div>
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

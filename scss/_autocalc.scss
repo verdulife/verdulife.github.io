@@ -1,6 +1,5 @@
 .autocalc-box {
   width: 100%;
-  height: 30%;
   h1 {
     margin-bottom: 2.5vw;
   }
@@ -10,9 +9,15 @@
 }
 
 .retencion-title:before {
-  content: '\00bb '' ';
+  content: '\f013';
+  font-family: 'FontAwesome';
+  margin-right: 2vw;
+  opacity: .5;
 }
 
 .iva-title:before {
-  content: '\00bb '' ';
+  content: '\f013';
+  font-family: 'FontAwesome';
+  margin-right: 2vw;
+  opacity: .5;
 }
