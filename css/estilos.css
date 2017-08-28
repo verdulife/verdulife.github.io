@@ -56,16 +56,16 @@ html, body {
   -ms-flex-pack: justify;
   justify-content: space-between; }
 
-#logo {
+nav {
   position: fixed;
   top: 10vw;
   right: 5vw;
   height: 10vw;
   cursor: pointer;
   z-index: 99; }
-  #logo img {
+  nav img {
     height: 100%; }
-  #logo p {
+  nav p {
     font-size: 3.5vw;
     opacity: .5;
     text-align: right;
@@ -223,7 +223,7 @@ hr {
   transition: .5s; }
   #about img {
     width: 50%;
-    margin-bottom: 10vw; }
+    margin-bottom: 5vw; }
   #about p {
     opacity: .5; }
   #about a {
@@ -231,10 +231,8 @@ hr {
     color: #F2F2F2;
     font-size: 4vw;
     margin-top: 2vw; }
-  #about hr {
-    margin: 10vw 0; }
   #about h2 {
-    margin-bottom: 5vw; }
+    margin: 20vw 0 3vw 0; }
 
 .close {
   position: absolute;

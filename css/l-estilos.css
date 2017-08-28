@@ -56,3 +56,17 @@ hr {
 
 .actual-display {
   font-size: 8vw; }
+
+.close {
+  top: 2vw;
+  left: 2vw; }
+
+#about h2 {
+  margin: 3vw 0 3vw 0; }
+
+.switch {
+  width: 8vw;
+  height: 4vw; }
+  .switch:after {
+    width: 5vw;
+    height: 5vw; }
