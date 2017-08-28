@@ -29,35 +29,34 @@
 
     <nav id="logo">
       <img src="assets/calculance-logo.svg" alt="calculance | KACTUS">
+      <p>C4LCUL4NC3</p>
     </nav>
 
     <div class="autocalc-box">
-      <div class="retencion-box">
-        <p class="retencion-title">irpf = {{retLow}}%</p>
-        <h1 id="retencionDisplay">{{val * 7 / 100}}€</h1>
+      <div class="retencion-box" ng-click="changeRet()">
+        <p class="retencion-title">IRPF {{ret}}%</p>
+        <h1 id="retencionDisplay">-{{val * ret / 100 | number: '2'}}€</h1>
       </div>
 
-      <div class="iva-box">
-        <p class="iva-title">iva = {{ivaHigh}}%</p>
-        <h1 id="ivaDisplay">{{val * 21 / 100}}€</h1>
+      <div class="iva-box" ng-click="changeIva()">
+        <p class="iva-title">IVA = {{ivas[iva]}}%</p>
+        <h1 id="ivaDisplay">{{val * ivas[iva] / 100 | number: '2'}}€</h1>
       </div>
 
       <div class="total-box">
         <p class="total-title">TOTAL</p>
-        <h1 id="totalDisplay">{{val + imp}}€</h1>
+        <h1 id="totalDisplay">{{val - (val * ret / 100) + (val * ivas[iva] / 100) | number: '2'}}€</h1>
       </div>
     </div>
 
     <div class="display-box">
 
       <div class="old-box">
-        <p class="old-three">{{val}}</p>
-        <p class="old-two">{{val}}</p>
-        <p class="old-one">{{val}}</p>
+        <p class="old">{{val}}</p>
       </div>
 
       <div class="actual-box">
-        <p class="actual-display">{{val}}</p>
+        <p class="actual-display">{{val}}€</p>
       </div>
     </div>
 
@@ -67,23 +66,23 @@
       <div class="num-btn" id="reset" ng-click="resetCalc(0)">AC</div>
       <div class="empty-btn" id="empty"></div>
       <div class="empty-btn" id="empty"></div>
-      <div class="num-btn" id="divisor" ng-click="addNum('/')">/</div>
+      <div class="num-btn" id="divisor" ng-click="addOp('/')">/</div>
       <div class="num-btn" id="numOne" ng-click="addNum(1)">1</div>
       <div class="num-btn" id="numTwo" ng-click="addNum(2)">2</div>
       <div class="num-btn" id="numthree" ng-click="addNum(3)">3</div>
-      <div class="num-btn" id="multiplier" ng-click="addNum('*')">*</div>
+      <div class="num-btn" id="multiplier" ng-click="addOp('*')">*</div>
       <div class="num-btn" id="numFour" ng-click="addNum(4)">4</div>
       <div class="num-btn" id="numFive" ng-click="addNum(5)">5</div>
       <div class="num-btn" id="numSix" ng-click="addNum(6)">6</div>
-      <div class="num-btn" id="minus" ng-click="addNum('-')">-</div>
+      <div class="num-btn" id="minus" ng-click="addOp('-')">-</div>
       <div class="num-btn" id="numSeven" ng-click="addNum(7)">7</div>
       <div class="num-btn" id="numEight" ng-click="addNum(8)">8</div>
       <div class="num-btn" id="numNine" ng-click="addNum(9)">9</div>
-      <div class="num-btn" id="plus" ng-click="addNum('+')">+</div>
+      <div class="num-btn" id="plus" ng-click="addOp('+')">+</div>
       <div class="empty-btn" id="empty"></div>
       <div class="num-btn" id="numZero" ng-click="addNum(0)">0</div>
-      <div class="num-btn" id="coma" ng-click="addNum(',')">,</div>
-      <div class="equal-btn" id="equal" ng-click="addNum('=')">=</div>
+      <div class="num-btn" id="coma" ng-click="addNum('.')">,</div>
+      <div class="equal-btn" id="equal" ng-click="equal()">=</div>
     </div>
 
   </main>
@@ -95,6 +94,8 @@
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.6.4/angular-touch.min.js"></script>
+  <script src="js/angular-es_es.js"></script>
   <script src="js/app.js"></script>
 
 </body>

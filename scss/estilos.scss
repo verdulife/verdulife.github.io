@@ -32,6 +32,7 @@ html, body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 10vw 5vw 5vw 5vw;
 }
 
@@ -55,16 +56,24 @@ html, body {
 
 nav {
   position: fixed;
-  top: 8vw;
-  right: 4vw;
-  height: 12vw;
+  top: 10vw;
+  right: 5vw;
+  height: 10vw;
   img {
     height: 100%;
+  }
+  p {
+    font-size: 3.5vw;
+    opacity: .1;
+    text-align: right;
+    letter-spacing: 1vw;
   }
 }
 
 hr {
-  margin: 5vw 0;
+  width: 100%;
+  display: flex;
+  margin: 3vw 0;
   opacity: .05;
 }
 

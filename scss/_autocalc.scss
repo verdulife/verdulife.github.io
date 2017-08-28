@@ -8,3 +8,11 @@
     margin-bottom: .5vw;
   }
 }
+
+.retencion-title:before {
+  content: '\00bb '' ';
+}
+
+.iva-title:before {
+  content: '\00bb '' ';
+}

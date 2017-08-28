@@ -18,29 +18,80 @@ $(document).ready(function () {
 
 });
 
-var calcApp = angular.module('calcApp', []);
+var calcApp = angular.module('calcApp', ['ngTouch']);
 
-calcApp.controller('calcCon', function($scope){
+calcApp.controller('calcCon', function ($scope) {
 
-  $scope.retLow = '7';
-  $scope.retLow = '7';
-  $scope.ivaLow = '4';
-  $scope.ivaMid = '16';
-  $scope.ivaHigh = '21';
+  $scope.ret = '15';
 
-  $scope.val = '0';
+  $scope.val = 0;
 
-  $scope.addNum = function(num){
-    if($scope.val == '0'){
+  $scope.addOp = function(operacion){
+    $scope.operacion = operacion;
+  };
+
+  $scope.equal = function() {
+    switch($scope.operacion) {
+      case '+': 
+        $scope.val = $scope.saved + $scope.val;
+      break;
+      case '-': 
+        $scope.val = $scope.saved - $scope.val;
+       break;
+       case '*': 
+        $scope.val = $scope.saved * $scope.val;
+      break;
+       case '/': 
+        $scope.val = $scope.saved / $scope.val;
+      break;
+      default:
+      break;
+    }
+  }
+
+  $scope.operacion = null;
+  $scope.val = $scope.val.toString();
+
+  $scope.addNum = function (num) {
+    if ($scope.val == '0') {
       $scope.val = '';
     }
 
+    if(/([,]])+/.test($scope.val) && num == ',') {
+      return;
+    }
+
+    if($scope.operacion){
+      $scope.saved = parseFloat($scope.val);
+      $scope.val = 0;
+    }
+
     $scope.val += num;
-
   };
 
-  $scope.resetCalc = function(num){
-    $scope.val = '0';
+  $scope.resetCalc = function (num) {
+    $scope.val = 0;
+    $scope.operacion = null;
+    $scope.saved = 0;
   };
 
+  $scope.changeRet = function () {
+    $scope.ret = $scope.ret === '7' ? '15' : '7';
+  };
+
+  $scope.iva = 0;
+  $scope.ivas = [21, 10, 4]
+  $scope.changeIva = function () {
+    switch ($scope.iva) {
+      case 0:
+        $scope.iva = 1;
+        break;
+      case 1:
+        $scope.iva = 2; 
+        break;
+      case 2:
+        $scope.iva = 0;
+        break;
+    }
+  };
 });
