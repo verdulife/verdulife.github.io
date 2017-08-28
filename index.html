@@ -18,7 +18,7 @@
   <title>C4LCUL4NC3</title>
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/estilos.css">
-  <link rel="stylesheet" type="text/css" media="only screen and (min-width: 700px)" href="css/l-estilos.css">
+  <link rel="stylesheet" type="text/css" media="only screen and (orientation: landscape)" href="css/l-estilos.css">
   <!-- Fonts/Icons -->
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,600" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -90,6 +90,16 @@
 
   </main>
 
+  <article id="about" ng-controller="calcCon">
+    <div class="close"><i class="fa fa-chevron-left" aria-hidden="true"></i>ATRAS</div>
+    <img src="assets/kactus-logo.svg" alt="KACTUS">
+    <p>Para más información visítanos en:</p>
+    <a href="www.kactusstudio.com">www.kactusstudio.com</a>
+    <hr>
+    <h2>{{color}}</h2>
+    <div class="switch dark" ng-click="colorChange()"></div>
+  </article>
+
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
@@ -97,7 +107,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
   <script src="https://code.angularjs.org/1.6.4/angular-touch.min.js"></script>
   <script src="js/angular-es_es.js"></script>
-  <script src="js/apptest.js"></script>
+  <script src="js/fastclick.js"></script>
+  <script>
+    $(function(){
+      FastClick.attach(document.body);
+    });
+  </script>
+  <script src="js/app.js"></script>
 
 </body>
 

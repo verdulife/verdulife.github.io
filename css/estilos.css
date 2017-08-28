@@ -3,7 +3,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Fira Sans', monospace; }
+  font-family: 'Fira Sans', monospace;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 h1, h2, h3 {
   font-size: 8vw;
@@ -52,28 +56,16 @@ html, body {
   -ms-flex-pack: justify;
   justify-content: space-between; }
 
-@media (orientation: landscape) {
-  #calculanceView {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row; }
-  .top-box {
-    width: 50%;
-    height: 100%; }
-  .numpad-box {
-    width: 50%;
-    height: 100%; } }
-
-nav {
+#logo {
   position: fixed;
   top: 10vw;
   right: 5vw;
-  height: 10vw; }
-  nav img {
+  height: 10vw;
+  cursor: pointer;
+  z-index: 99; }
+  #logo img {
     height: 100%; }
-  nav p {
+  #logo p {
     font-size: 3.5vw;
     opacity: .5;
     text-align: right;
@@ -89,7 +81,7 @@ hr {
   opacity: .05; }
 
 .autocalc-box {
-  width: 100%; }
+  z-index: 999; }
   .autocalc-box h1 {
     margin-bottom: 2.5vw; }
   .autocalc-box p {
@@ -108,7 +100,11 @@ hr {
   opacity: .5; }
 
 .display-box {
+  position: fixed;
+  top: 10vw;
+  right: 5vw;
   width: 100%;
+  height: 45%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -132,7 +128,12 @@ hr {
   margin-top: -10vw; }
 
 .actual-display {
-  font-size: 18vw; }
+  font-size: 18vw;
+  text-align: right;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 .numpad-box {
   width: 100%;
@@ -190,3 +191,111 @@ hr {
   opacity: 1;
   -webkit-box-shadow: 0 0 3vw 0 #000;
   box-shadow: 0 0 3vw 0 #000; }
+
+#about {
+  position: fixed;
+  top: 0;
+  left: 100vw;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #1A1A1A;
+  padding: 10vw 5vw 5vw 5vw;
+  z-index: 999;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
+  transition: .5s; }
+  #about img {
+    width: 50%;
+    margin-bottom: 10vw; }
+  #about p {
+    opacity: .5; }
+  #about a {
+    text-decoration: none;
+    color: #F2F2F2;
+    font-size: 4vw;
+    margin-top: 2vw; }
+  #about hr {
+    margin: 10vw 0; }
+  #about h2 {
+    margin-bottom: 5vw; }
+
+.close {
+  position: absolute;
+  top: 10vw;
+  left: 5vw;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #F2F2F2;
+  font-size: 3.5vw;
+  opacity: .5; }
+  .close i {
+    margin-right: 1vw; }
+
+.switch {
+  width: 16vw;
+  height: 8vw;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #F2F2F2;
+  border-radius: 5vw;
+  -webkit-box-shadow: inset 0 0 2vw 0 rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 2vw 0 rgba(0, 0, 0, 0.4);
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  transition: .2s; }
+  .switch:after {
+    content: '';
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 9vw;
+    height: 9vw;
+    background: #6CBE99;
+    border-radius: 5vw;
+    -webkit-box-shadow: 0 0 1vw 0 #000;
+    box-shadow: 0 0 1vw 0 #000;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s; }
+
+.dark {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start; }
+
+.light {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }

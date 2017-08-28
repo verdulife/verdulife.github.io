@@ -1,0 +1,58 @@
+#calculanceView {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 2vw; }
+
+nav {
+  top: 2vw;
+  left: 2vw;
+  right: inherit;
+  height: 5vw; }
+  nav p {
+    font-size: 1.75vw; }
+
+.top-box {
+  width: 50%;
+  height: calc(100% - 32vw); }
+
+.numpad-box {
+  width: 50%;
+  height: calc(100% - 28vw); }
+  .numpad-box div {
+    font-size: 3.5vw;
+    height: calc(20vh - 4vw); }
+
+#reset, #divisor, #delete {
+  font-size: 2.5vw; }
+
+#equal {
+  width: 7vw;
+  height: 7vw;
+  margin-left: 2.5vw; }
+
+h1,
+h2,
+h3 {
+  font-size: 4vw; }
+
+p {
+  font-size: 1.75vw; }
+
+hr {
+  position: fixed;
+  top: 14vw;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 96vw; }
+
+.display-box {
+  top: 2vw;
+  right: 2vw;
+  height: 22vw; }
+
+.actual-display {
+  font-size: 8vw; }
